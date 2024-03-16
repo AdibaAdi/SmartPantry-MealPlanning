@@ -22,7 +22,7 @@ function Register  () {
             <input type='password' className={styles.inputBox} placeholder='Password' id='regPassword'></input>
           </div>
           <div>
-            <button className={styles.loginButton}>Register</button>
+            <button onClick={registerFunction} className={styles.loginButton}>Register</button>
           </div>
           <div>
             <a href="/loginUI" style={{color: 'inherit'}}>

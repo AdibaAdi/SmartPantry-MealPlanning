@@ -1,12 +1,20 @@
 import styles from './login.module.css';
 import logo from '../images/book.png'
 
-function Login () {
+async function Login () {
   
   const loginFunction = () => {
     const inputtedUsername = document.getElementById('logUsername').value;
     const inputtedPassword = document.getElementById('logPassword').value;
   }
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(loginData)
+  });
+  
   
   return (
       <div className={styles.loginWrapper}>

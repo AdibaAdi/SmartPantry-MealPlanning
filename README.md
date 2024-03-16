@@ -1,5 +1,7 @@
 # SmartPantry: Your Ultimate Meal Planning Companion
 
+# HackSwift Hackathon Project 2024
+
 Welcome to SmartPantry! It's a revolutionary meal planning application designed to transform your meal planning experience. SmartPantry is  a comprehensive tool aimed at reducing food waste, teaching the correct methods of food storage, and inspiring users to create delicious meals tailored to their tastes and preferences. SmartPantry is a great assist for go-to for meal planning, recipe creation, and food storage tips.
 
 # Features

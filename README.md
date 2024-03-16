@@ -28,11 +28,11 @@ SmartPantry is built using the MERN stack, a full-stack web application developm
     Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js powers our back-end, from server logic to database management.
 
 # Team Members: 
-Adiba Akter
-Jalen Scrivner
-Samantha Ceralde
-Jacob Cook
-Richard Varela
+Adiba Akter<br/>
+Jalen Scrivner<br/>
+Samantha Ceralde<br/>
+Jacob Cook<br/>
+Richard Varela<br/>
 
 # License
 

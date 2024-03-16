@@ -1,0 +1,88 @@
+.titleHeaderContainer {
+    background-color: #000000;
+    color:#fff;
+    justify-content: space-between;
+    height: 120px;
+    display: flex;
+    align-items:center;
+    padding: 20px;
+    }
+.titleContainer {
+    font-family: NotoSans;
+    font-size: 80px;
+    float:left;
+    display: flex;
+  }
+.titleText {
+  margin: 0%;
+  float: left;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.titleText:hover {
+  margin: 0%;
+  float: left;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: green;
+}
+.titleImg{
+  height: 160px;
+  float: left;
+}
+.signOutContainer {
+  font-size: 30px;
+  float:right;
+  text-align: center;
+  }
+.signOutText {
+  color: inherit;
+  margin: 0%;
+  }
+.navBarContainer{
+  background-color: #fff;
+  width: 100%;
+  margin: 0%;
+}
+.navItemsContainer{
+  background-color: #D9D9D9;
+  margin: 0%;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  height: fit-content;
+  
+}
+.navItemText{
+  font-family: NotoSans;
+  font-size: 40px;
+  color: inherit;
+  margin: 0%;
+  float: right;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.navItem{
+  margin: 0%;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  display: flex;
+}
+.navItem:hover{
+  margin: 0%;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  display: flex;
+  color: green;
+}
+.navImg{
+  height: 100px;
+  float: left;
+}
+
+  @font-face {
+    font-family: NotoSans;
+    src: url(./fonts/NotoSans.ttf);
+  }

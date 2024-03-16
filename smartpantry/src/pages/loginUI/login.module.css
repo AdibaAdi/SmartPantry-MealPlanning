@@ -1,0 +1,88 @@
+.loginWrapper{
+    background: url(../images/loginBackground.jpg) no-repeat center center fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height:100vh;
+}
+.loginBox{
+    position: absolute;
+    margin: auto;
+    background-color: white;
+    border-radius: 30px;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    height: 600px;
+    width: 400px;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-style: solid;
+}
+.loginTextContainer{
+    width: 200px;
+    text-align: center;
+    height: 100px;
+    align-self: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.loginText{
+    justify-content:center;
+    font-family: Inika;
+    font-size: 40px;
+    margin: 0px;
+}
+.loginImg{
+    height: 150px;
+}
+.inputBox{
+    font-family: Inika;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 8px;
+    border-width: 3px;
+    border-color: black;
+}
+.loginButton{
+    font-family: Inika;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 8px;
+    border-width: 3px;
+    border-color: black;
+    background-color: rgb(103, 196, 103);
+}
+.registerButton{
+    font-family: Inika;
+    font-size: 15px;
+    text-decoration: underline;
+    margin: 5px;
+}
+.registerText{
+    font-family: Inika;
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+.returnToLoginButton{
+    font-family: Inika;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+  html, body {
+    height: 100%;
+    margin:0;
+  }
+
+  @font-face {
+    font-family: Inika;
+    src: url(../fonts/Inika-Regular.ttf);
+  }

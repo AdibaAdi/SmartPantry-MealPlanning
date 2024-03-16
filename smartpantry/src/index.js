@@ -5,6 +5,8 @@ import NavBar from "./pages/NavBar";
 import Leftovers from "./pages/Leftovers";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
+import Login from "./pages/loginUI/Login"
+import Register from "./pages/loginUI/Register"
 
 export default function App() {
   return (
@@ -15,6 +17,10 @@ export default function App() {
           <Route path="RecipeSearch" element={<RecipeSearch />} />
           <Route path="Leftovers" element={<Leftovers />} />
           <Route path="*" element={<ErrorPage />} />
+        </Route>
+        <Route path="/loginUI">
+          <Route index element={<Login />} />
+          <Route path="Register" element={< Register />} />
         </Route>
       </Routes>
     </BrowserRouter>

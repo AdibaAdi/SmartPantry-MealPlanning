@@ -1,8 +1,14 @@
 import styles from './login.module.css';
 import logo from '../images/book.png'
 
-const Login = () => {
-    return (
+function Login () {
+  
+  const loginFunction = () => {
+    const inputtedUsername = document.getElementById('logUsername').value;
+    const inputtedPassword = document.getElementById('logPassword').value;
+  }
+  
+  return (
       <div className={styles.loginWrapper}>
         <div className={styles.loginBox}>
           <img src={logo} alt="Logo" className={styles.loginImg}/>
@@ -10,11 +16,11 @@ const Login = () => {
             <p className={styles.loginText}>Login</p>
           </div>
           <div>
-            <input className={styles.inputBox} placeholder='Username'></input> <br></br>
-            <input className={styles.inputBox} placeholder='Password'></input>
+            <input type='text' className={styles.inputBox} placeholder='Username' id='logUsername'></input> <br></br>
+            <input type='password' className={styles.inputBox} placeholder='Password' id='logPassword'></input>
           </div>
           <div>
-            <button className={styles.loginButton}>Login</button>
+            <button onClick={loginFunction} className={styles.loginButton}>Login</button>
           </div>
           <div>
             <p className={styles.registerText}>New User?</p>

@@ -1,9 +1,9 @@
 import styles from './login.module.css';
 import logo from '../images/book.png'
 
-async function Login () {
+ function Login () {
   
-  async function loginFunction() {
+   async function loginFunction() {
     console.log('API URL:', process.env.REACT_APP_API_URL);
     const inputtedUsername = document.getElementById('logUsername').value;
     const inputtedPassword = document.getElementById('logPassword').value;
@@ -27,7 +27,7 @@ async function Login () {
     } else {
         // Handle errors, display messages, etc.
     }
-}
+ }
 
   
   return (

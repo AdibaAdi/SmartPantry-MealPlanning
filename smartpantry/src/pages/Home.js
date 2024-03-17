@@ -1,24 +1,44 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react'; // Import useState for handling input state
+import { Link, useNavigate } from 'react-router-dom'; // Corrected duplicate import
 import './homeStyleSheet/home.css'; 
 import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg'; 
-import './moreInfoStyleSheet/moreinfo.css'; 
+import './moreInfoStyleSheet/moreinfo.css';
 
 const Home = () => {
+  const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
+  const navigate = useNavigate(); // Hook to programmatically navigate
+
   const recipes = [
     { title: "Pancakes", ingredients: ["Egg", "Flour", "Vanilla extract"], time: "8 minutes" },
     { title: "Grilled Cheese", ingredients: ["Cheese", "Bread", "Butter"], time: "5 minutes" },
     { title: "Smoothie", ingredients: ["Banana", "Milk", "Honey", "Ice"], time: "5 minutes" },
   ];
 
+  const handleSearchInput = (event) => {
+    setSearchQuery(event.target.value); // Update state with current input
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault(); // Prevent the form from causing a page reload
+    navigate(`/searching/${searchQuery}`); // Navigate to the search results page
+  };
+
   return (
     <div className="home">
       <div className="banner">
         <img src={bluefoodimage} alt="" />
         <div className="search-section">
-          <div className="input-wrapper">
-            <input type="text" placeholder="Search recipe by name, ingredients, etc." className="search-input" />
-          </div>
+          <form onSubmit={handleSearchSubmit}> {/* Add form element with submit handler */}
+            <div className="input-wrapper">
+              <input 
+                type="text" 
+                placeholder="Search recipe by name, ingredients, etc." 
+                className="search-input"
+                onChange={handleSearchInput} // Add change handler to update state
+                value={searchQuery} // Set input value to be controlled by state
+              />
+            </div>
+          </form>
         </div>
       </div>
       {/* Container for recipes */}
@@ -46,9 +66,9 @@ const Home = () => {
               Estimated Time: {recipe.time}
               {/* More Link */}
               <div>
-              <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link">More →</Link>
+                <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link">More →</Link>
+              </div>
             </div>
-          </div>
           </div>
         ))}
       </div>

@@ -4,11 +4,9 @@ import logo from '../images/book.png'
 function Login () {
   
   const loginFunction = () => {
-    const inputtedUsername = document.getElementById('logUsername').value;
-    const inputtedPassword = document.getElementById('logPassword').value;
     const loginData = {
-      username: inputtedUsername,
-      password: inputtedPassword
+      username: document.getElementById('logPassword').value,
+      password: document.getElementById('logUsername').value
     }
     alert(JSON.stringify(loginData));
   }

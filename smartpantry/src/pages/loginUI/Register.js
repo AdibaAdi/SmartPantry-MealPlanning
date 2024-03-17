@@ -4,13 +4,10 @@ import logo from '../images/book.png'
 function Register  () {
 
   const registerFunction = () => {
-    const inputtedUsername = document.getElementById('regUsername').value;
-    const inputtedEmail = document.getElementById('regEmail').value;
-    const inputtedPassword = document.getElementById('regPassword').value;
     const regData = {
-      username: inputtedUsername,
-      email: inputtedEmail,
-      password: inputtedPassword
+      username: document.getElementById('regUsername').value,
+      email: document.getElementById('regEmail').value,
+      password: document.getElementById('regPassword').value
     }
     alert(JSON.stringify(regData));
   }

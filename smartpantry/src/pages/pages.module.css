@@ -145,10 +145,11 @@ border-color: #d9d9d9;
 border-style: solid;
 height: fit-content;
 opacity: 0.9;
-padding-bottom: 200px;
+padding-bottom: 50px;
 }
 .recipeCreateInnererContainer{
 display: flex;
+justify-content: space-between;
 }
 .recipeInputBox{
 margin-left: 20px;
@@ -159,6 +160,33 @@ font-size: 20px;
 font-size: 24px;
 font-family: Inika;
 margin-left: 20px;
+margin-bottom: 5px;
+}
+.saveRecipeText{
+  font-size: 14px;
+  font-family: Inika;
+  margin: 1px;
+}
+.saveRecipeBtn{
+  font-size: 24px;
+  font-family: Inika;
+  text-align: center;
+  padding: 10px;
+  margin-left: 18px;
+}
+.exitRecipeBtn{
+  font-size: 24px;
+  font-family: Inika;
+  text-align: center;
+  padding: 10px;
+  margin-left: 18px;
+}
+.saveRecipeContainer{
+  padding: 1px;
+}
+.recipeDetailsContainer{
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .ingredientTitleText{
 font-size: 20px;

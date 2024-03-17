@@ -1,3 +1,4 @@
+import { Link }from 'react-router-dom';
 import React from 'react';
 import './homeStyleSheet/home.css'; // Ensure this path matches your file structure
 import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg'; // Adjust the path as necessary
@@ -25,7 +26,7 @@ const Home = () => {
       <div className="recipes-container">
         <div className="recipes-header">
           <h1 className="my-recipes">My Recipes</h1>
-          <span className="create-recipe">Create a Recipe</span>
+          <Link to="/CreateRecipe"><span className="create-recipe">Create a Recipe</span></Link>
         </div>
         {/* Mapping through recipes */}
         {recipes.map((recipe, index) => (

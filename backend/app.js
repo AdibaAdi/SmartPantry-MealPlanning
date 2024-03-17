@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 
 //MongoDB Connection
-const mongoDB_URI = process.env.MONGODB_URI || 'mongodb+srv://AdibaAdi:oH2FTmyO4biwaImK@smartpantry.4bt73na.mongodb.net/';
+const mongoDB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(mongoDB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected...'))

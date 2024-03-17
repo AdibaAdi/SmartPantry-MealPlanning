@@ -3,18 +3,32 @@ import logo from '../images/book.png'
 
 async function Login () {
   
-  const loginFunction = () => {
+  async function loginFunction() {
+    console.log('API URL:', process.env.REACT_APP_API_URL);
     const inputtedUsername = document.getElementById('logUsername').value;
     const inputtedPassword = document.getElementById('logPassword').value;
-  }
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(loginData)
-  });
-  
+    
+    const loginData = {
+        username: inputtedUsername,
+        password: inputtedPassword
+    };
+    
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginData)
+    });
+
+    const responseData = await response.json();
+    if (response.ok) {
+        // Handle success, store token, redirect user, etc.
+    } else {
+        // Handle errors, display messages, etc.
+    }
+}
+
   
   return (
       <div className={styles.loginWrapper}>

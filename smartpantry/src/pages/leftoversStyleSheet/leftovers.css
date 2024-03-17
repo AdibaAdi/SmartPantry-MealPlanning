@@ -1,5 +1,5 @@
 .banner {
-  position: relative; /* This makes it a containing block for absolute positioning */
+  position: relative;
   width: 100%;
 }
 

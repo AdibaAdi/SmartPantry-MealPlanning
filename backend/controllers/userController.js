@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken'); // Used for generating JWT tokens for authe
 // Async function to handle user registration
 exports.register = async (req, res) => {
   // Destructure username, email, and password from request body
-  const { username, email, password } = req.body;
+  const { user_name, email, password } = req.body;
 
   try {
     // Validate email format using validator package
@@ -28,7 +28,7 @@ exports.register = async (req, res) => {
 
     // Create a new user instance with the provided details
     user = new User({
-      username,
+      user_name,
       email,
       password 
     });
@@ -103,18 +103,17 @@ exports.getUserByEmail = async (req, res) => {
 // Async function to handle user login
 exports.login = async (req, res) => {
     const { email, password } = req.body;
-  
     try {
       // Check if a user with the given email exists
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(400).json({ msg: 'Invalid credentials' });
+        return res.status(400).json({ msg: 'Invalid credentials1' });
       }
   
       // Compare the provided password with the hashed password
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        return res.status(400).json({ msg: 'Invalid credentials' });
+        return res.status(400).json({ msg: 'Invalid credentials2' });
       }
   
       // Prepare payload for JWT token

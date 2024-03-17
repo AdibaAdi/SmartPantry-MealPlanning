@@ -4,15 +4,34 @@ import logo from '../images/book.png'
 function Login () {
   
   const loginFunction = () => {
+
     const inputtedUsername = document.getElementById('logUsername').value;
     const inputtedPassword = document.getElementById('logPassword').value;
-    const loginData = {
-      username: inputtedUsername,
-      password: inputtedPassword
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    const raw = JSON.stringify({
+      "email": inputtedUsername,
+      "password": inputtedPassword
+    });
+    
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+    
+    fetch("http://localhost:8000/api/users/login", requestOptions)
+      .then((response) => response.status)
+      .then((result) => {
+        if(result == 200)
+        window.location.replace("./")
+      })
+      .catch((error) => console.error(error));
     }
-    alert(JSON.stringify(loginData));
-  }
-  
+ 
   return (
       <div className={styles.loginWrapper}>
         <div className={styles.loginBox}>

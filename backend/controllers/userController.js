@@ -30,7 +30,7 @@ exports.register = async (req, res) => {
     user = new User({
       username,
       email,
-      password // Note: This is plaintext password initially
+      password 
     });
 
     // Generate a salt and hash the password before storing it
@@ -71,6 +71,19 @@ exports.getAllUsers = async (req, res) => {
     res.status(500).send('Server error');
   }
 };
+
+// Async function to get the logged-in user's profile
+exports.getUserProfile = async (req, res) => {
+  try {
+    // Assume req.user.id is set from a JWT authentication middleware
+    const user = await User.findById(req.user.id).select('-password'); // Exclude password from the result
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+};
+
 
 // Async function to fetch a single user by their email
 exports.getUserByEmail = async (req, res) => {

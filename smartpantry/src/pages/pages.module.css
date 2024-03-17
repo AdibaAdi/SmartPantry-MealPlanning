@@ -2,14 +2,14 @@
     background-color: #000000;
     color:#fff;
     justify-content: space-between;
-    height: 120px;
+    height: 80px;
     display: flex;
     align-items:center;
     padding: 20px;
     }
 .titleContainer {
     font-family: NotoSans;
-    font-size: 80px;
+    font-size: 40px;
     float:left;
     display: flex;
   }
@@ -27,11 +27,11 @@
   color: green;
 }
 .titleImg{
-  height: 160px;
+  height: 120px;
   float: left;
 }
 .signOutContainer {
-  font-size: 30px;
+  font-size: 20px;
   float:right;
   text-align: center;
   }
@@ -55,12 +55,12 @@
 }
 .navItemText{
   font-family: NotoSans;
-  font-size: 40px;
+  font-size: 30px;
   color: inherit;
   margin: 0%;
   float: right;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .navItem{
   margin: 0%;
@@ -78,8 +78,23 @@
   color: green;
 }
 .navImg{
-  height: 100px;
+  height: 70px;
   float: left;
+}
+
+.recipeTitleBox{
+  background-color: white;
+  border: #000000;
+  border-width: 4px;
+  width: 20%;
+  text-align: center;
+  align-content: center;
+  margin: auto;
+
+}
+.recipeTitleText{
+  font-family: NotoSans;
+  font-size: 20px;
 }
 
   @font-face {

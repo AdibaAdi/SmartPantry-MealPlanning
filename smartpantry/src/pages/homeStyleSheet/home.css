@@ -172,6 +172,11 @@
   z-index: 2; /* Ensures it's above the background image */
 }
 
+.bullet {
+  font-size: 0.2em; /* Adjusts the font size to make the bullet tinier */
+  margin-right: 5px; /* Adjust if needed to align the text properly */
+}
+
 .recipe-title {
   font-size: 1.2em; /* Increase font size for recipe titles */
   font-weight: bold; /* Make recipe titles bold */

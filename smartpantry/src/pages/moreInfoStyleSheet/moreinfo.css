@@ -1,0 +1,37 @@
+.more-info-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .recipe-header h1, .recipe-header h2, .recipe-instructions h2 {
+    margin-bottom: 10px;
+  }
+  
+  .recipe-header ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .recipe-header ul li {
+    margin-bottom: 5px;
+  }
+  
+  .recipe-instructions {
+    margin-top: 20px;
+  }
+  
+  .recipe-header, .recipe-instructions {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .recipe-header {
+    background-color: #f9f9f9;
+  }
+  
+  .recipe-instructions {
+    background-color: #f0f0f0;
+  }
+  

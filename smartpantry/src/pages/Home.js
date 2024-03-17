@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import './homeStyleSheet/home.css'; // Ensure this path matches your file structure
-import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg'; // Adjust the path as necessary
+import './homeStyleSheet/home.css'; 
+import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg'; 
+import './moreInfoStyleSheet/moreinfo.css'; 
 
 const Home = () => {
   const recipes = [
@@ -44,8 +45,10 @@ const Home = () => {
               {/* Recipe Time */}
               Estimated Time: {recipe.time}
               {/* More Link */}
+              <div>
               <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link">More →</Link>
             </div>
+          </div>
           </div>
         ))}
       </div>

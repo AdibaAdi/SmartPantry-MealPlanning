@@ -1,8 +1,7 @@
-import { Link }from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './homeStyleSheet/home.css'; // Ensure this path matches your file structure
 import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg'; // Adjust the path as necessary
-
 
 const Home = () => {
   const recipes = [
@@ -15,12 +14,11 @@ const Home = () => {
     <div className="home">
       <div className="banner">
         <img src={bluefoodimage} alt="" />
-        <div class="search-section">
-  <div class="input-wrapper">
-    <input type="text" placeholder="Search recipe by name, ingredients, etc." class="search-input" />
-  </div>
-</div>
-
+        <div className="search-section">
+          <div className="input-wrapper">
+            <input type="text" placeholder="Search recipe by name, ingredients, etc." className="search-input" />
+          </div>
+        </div>
       </div>
       {/* Container for recipes */}
       <div className="recipes-container">
@@ -46,7 +44,7 @@ const Home = () => {
               {/* Recipe Time */}
               Estimated Time: {recipe.time}
               {/* More Link */}
-              <div><a href="#" className="more-link">More →</a></div>
+              <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link">More →</Link>
             </div>
           </div>
         ))}

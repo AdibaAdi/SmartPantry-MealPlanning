@@ -7,13 +7,34 @@ function Register  () {
     const inputtedUsername = document.getElementById('regUsername').value;
     const inputtedEmail = document.getElementById('regEmail').value;
     const inputtedPassword = document.getElementById('regPassword').value;
-    const regData = {
-      username: inputtedUsername,
-      email: inputtedEmail,
-      password: inputtedPassword
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+
+    const raw = JSON.stringify({
+      "user_name": inputtedUsername,
+      "email": inputtedEmail,
+      "password": inputtedPassword
+    });
+
+    console.log(raw);
+    
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+    
+    fetch("http://localhost:8000/api/users/register", requestOptions)
+      .then((response) => response.status)
+      .then((result) => {
+        console.log(result);
+        if(result == 201)
+        window.location.replace("./")
+      })
+      .catch((error) => console.error(error));
     }
-    alert(JSON.stringify(regData));
-  }
   
     return (
       <div className={styles.loginWrapper}>

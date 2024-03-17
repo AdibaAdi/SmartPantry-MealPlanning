@@ -1,6 +1,6 @@
 // user.test.js
 const request = require('supertest');
-const app = require('../app'); // Adjust this path to the location of your app file
+const app = require('../../smartpantry'); // Adjust this path to the location of your app file
 
 describe('User Registration', () => {
   it('should register a new user', async () => {

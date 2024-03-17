@@ -6,6 +6,11 @@ function Login () {
   const loginFunction = () => {
     const inputtedUsername = document.getElementById('logUsername').value;
     const inputtedPassword = document.getElementById('logPassword').value;
+    const loginData = {
+      username: inputtedUsername,
+      password: inputtedPassword
+    }
+    alert(JSON.stringify(loginData));
   }
   
   return (

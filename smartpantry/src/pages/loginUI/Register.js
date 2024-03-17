@@ -7,6 +7,12 @@ function Register  () {
     const inputtedUsername = document.getElementById('regUsername').value;
     const inputtedEmail = document.getElementById('regEmail').value;
     const inputtedPassword = document.getElementById('regPassword').value;
+    const regData = {
+      username: inputtedUsername,
+      email: inputtedEmail,
+      password: inputtedPassword
+    }
+    alert(JSON.stringify(regData));
   }
   
     return (

@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Login from "./pages/loginUI/Login"
 import Register from "./pages/loginUI/Register"
+import CreateRecipe from "./pages/CreateRecipe"
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="RecipeSearch" element={<RecipeSearch />} />
           <Route path="Leftovers" element={<Leftovers />} />
+          <Route path="CreateRecipe" element={<CreateRecipe />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
         <Route path="/loginUI">

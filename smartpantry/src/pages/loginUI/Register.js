@@ -1,7 +1,14 @@
 import styles from './login.module.css';
 import logo from '../images/book.png'
 
-const Register = () => {
+function Register  () {
+
+  const registerFunction = () => {
+    const inputtedUsername = document.getElementById('regUsername').value;
+    const inputtedEmail = document.getElementById('regEmail').value;
+    const inputtedPassword = document.getElementById('regPassword').value;
+  }
+  
     return (
       <div className={styles.loginWrapper}>
         <div className={styles.loginBox}>
@@ -10,12 +17,12 @@ const Register = () => {
             <p className={styles.loginText}>Register</p>
           </div>
           <div>
-            <input className={styles.inputBox} placeholder='Username'></input> <br></br>
-            <input className={styles.inputBox} placeholder='Email'></input> <br></br>
-            <input className={styles.inputBox} placeholder='Password'></input>
+            <input type='text' className={styles.inputBox} placeholder='Username' id='regUsername'></input> <br></br>
+            <input type='text' className={styles.inputBox} placeholder='Email' id='regEmail'></input> <br></br>
+            <input type='password' className={styles.inputBox} placeholder='Password' id='regPassword'></input>
           </div>
           <div>
-            <button className={styles.loginButton}>Register</button>
+            <button onClick={registerFunction} className={styles.loginButton}>Register</button>
           </div>
           <div>
             <a href="/loginUI" style={{color: 'inherit'}}>

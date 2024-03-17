@@ -9,7 +9,7 @@ router.post('/register', userController.register);
 // Route for user login
 router.post('/login', userController.login);
 
-// Route for getting user profile (assuming authentication middleware is used to protect this route)
+// Route for getting user profile
 router.get('/profile', userController.getUserProfile);
 
 module.exports = router;

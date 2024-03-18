@@ -44,7 +44,7 @@ const NavBar = () => {
             </div>
             <div className={styles.navItem}>
                 <img src={plan} alt="mealplan" className={styles.navImg}/>
-                <p className={styles.navItemText}>Meal Plan</p>
+                <p className={styles.navItemText}>Food Storage Tips</p>
             </div>
             <div className={styles.navItem}>
                 <Link to="/Leftovers" style={{color: 'inherit', textDecoration: 'inherit'}}>

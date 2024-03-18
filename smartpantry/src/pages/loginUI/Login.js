@@ -1,5 +1,5 @@
 import styles from './login.module.css';
-import logo from '../images/book.png'
+import logo from '../images/book.png'    
 
 function Login () {
   
@@ -26,8 +26,12 @@ function Login () {
     fetch("http://localhost:8000/api/users/login", requestOptions)
       .then((response) => response.status)
       .then((result) => {
-        if(result == 200)
-        window.location.replace("./")
+        if(result == 200) {
+          window.location.replace("../");
+          localStorage.setItem('username', inputtedUsername);
+        }
+        else
+          alert("Incorrect Email or Password");
       })
       .catch((error) => console.error(error));
     }

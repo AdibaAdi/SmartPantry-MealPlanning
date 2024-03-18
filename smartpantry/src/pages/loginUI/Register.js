@@ -31,7 +31,9 @@ function Register  () {
       .then((result) => {
         console.log(result);
         if(result == 201)
-        window.location.replace("./")
+          window.location.replace("./")
+        else
+          alert("User already exists or email is invalid");
       })
       .catch((error) => console.error(error));
     }

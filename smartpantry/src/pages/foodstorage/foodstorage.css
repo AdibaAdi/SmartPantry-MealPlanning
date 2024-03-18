@@ -10,7 +10,18 @@
   .tips-list {
     list-style-type: disc;
     margin-left: 20px;
+    font-size: 30px; /* Increased font size */
   }
   
-
+  .tips-list li {
+    margin-bottom: 20px; /* Increased space between paragraphs */
+  }
+  
+  .tips-list img {
+    float: right; /* Align images to the right of the text */
+    margin-left: 20px; /* Add some space between text and images */
+    width: 150px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
   

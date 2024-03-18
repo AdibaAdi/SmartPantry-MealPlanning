@@ -8,4 +8,8 @@ router.get('/search/:query', recipeController.searchRecipes);
 // Route to get nutrition data for a recipe
 router.post('/nutrition', recipeController.getNutritionData);
 
+router.get('/all', recipeController.getAllRecipes);
+
+router.get('/getMyRecipes', recipeController.getUserRecipes);
+
 module.exports = router;

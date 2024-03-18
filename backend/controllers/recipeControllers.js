@@ -1,4 +1,5 @@
 const axios = require('axios');
+const Recipe = require('../models/Recipe'); 
 
 // Environment variables for API credentials and URLs
 const FOOD_API_URL = 'https://api.edamam.com/api/recipes/v2';
@@ -47,3 +48,31 @@ exports.getNutritionData = async (req, res) => {
         res.status(500).json({ message: 'Error fetching nutrition data' });
     }
 };
+
+// Async function to fetch all recipes from the database
+exports.getAllRecipes = async (req, res) => {
+    try {
+      const recipes = await Recipe.find(); // Fetch all users without filters
+      res.json(recipes); // Send back the user data as JSON
+    } catch (err) {
+      // Log and return any errors encountered
+      console.error(err);
+      res.status(500).send('Server error');
+    }
+  };
+
+  // Async function to fetch all recipes from the database
+  exports.getUserRecipes = async (req, res) => {
+    try {
+      // Extract email from request parameters
+      const recipe = await Recipe.find({ user_name: req.body.user_name });
+      if (!recipe) {
+        return res.status(404).send('recipe not found'); // User not found in the database
+      }
+      res.json(recipe); // Send back the found user data as JSON
+    } catch (err) {
+      // Log and return any errors encountered
+      console.error(err);
+      res.status(500).send('Server error');
+    }
+  };

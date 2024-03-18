@@ -102,10 +102,10 @@ exports.getUserByEmail = async (req, res) => {
 };
 // Async function to handle user login
 exports.login = async (req, res) => {
-    const { email, password } = req.body;
+    const { user_name, password } = req.body;
     try {
       // Check if a user with the given email exists
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ user_name });
       if (!user) {
         return res.status(400).json({ msg: 'Invalid credentials1' });
       }

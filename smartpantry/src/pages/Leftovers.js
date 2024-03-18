@@ -1,22 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './leftoversStyleSheet/leftovers.css';
 import addSymbol from './leftoversStyleSheet/addSymbol.png';
-import delSymbol from './leftoversStyleSheet/delSymbol.png'; // Import delete symbol
+import delSymbol from './leftoversStyleSheet/delSymbol.png';
 import leftoverfood from './leftoversStyleSheet/leftoverfood.jpg';
 
 const Leftovers = () => {
-  const [mealName, setMealName] = useState('');
+  const [leftoverName, setLeftoverName] = useState('');
+  const inputRef = useRef(null); // Use useRef to reference the input element
   const [submittedMeals, setSubmittedMeals] = useState([]);
   const [completedMeals, setCompletedMeals] = useState([]);
+  const navigate = useNavigate();
 
-  const navigate = useNavigate(); 
-
-  // Handle change in meal name input
-  const handleNameChange = (event) => {
-    setMealName(event.target.value);
+  const fetchAndUpdateMeals = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/leftovers");
+      if(result === 200){
+        //localStorage.setItem("username",inputtedUsername);
+        //leftover.setItem("leftover_name",inputtedUsername);
+      
+      }else {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const meals = await response.json();
+      setSubmittedMeals(meals);
+    } catch (error) {
+      console.error("There was a problem fetching the meal data:", error);
+    }
   };
-//.
+  
+  //onChange handler
+  const handleLeftoverNameChange = (e) => setLeftoverName(e.target.value);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const username = localStorage.getItem('username'); // Retrieve username from localStorage
+
+    try {
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      
+      const raw = JSON.stringify({
+        "leftover_name": "test",
+        "user_name": username
+      });
+      
+      const requestOptions = {
+        method: "post",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+      };
+      fetch("http://localhost:8000/api/leftovers", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+
+      setLeftoverName(''); // Reset the input field for leftover name
+    } catch (error) {
+      console.error('Error adding leftover:', error);
+    }
+    fetchAndUpdateMeals();
+  };
   // Function to calculate the number of days since the meal was cooked
   const amountOfDays = (date) => {
     const now = new Date();
@@ -44,18 +89,6 @@ const Leftovers = () => {
     setCompletedMeals(newCompletedMeals);
   }, [submittedMeals]);
 
-  // Add a new meal when the submit button is clicked
-  const handleSubmitClick = () => {
-    if (!mealName) return;
-    const newMeal = {
-      name: mealName,
-      date: new Date(),
-      status: 'N' // Initial status is Not completed
-    };
-    setSubmittedMeals([...submittedMeals, newMeal]);
-    setMealName(''); // Clear the input after submitting
-  };
-
   // Delete a meal, but only if its status is 'Y' (Completed)
   const deleteMeal = (indexToDelete) => {
     const mealToDelete = submittedMeals[indexToDelete];
@@ -66,11 +99,10 @@ const Leftovers = () => {
     setSubmittedMeals(currentMeals => currentMeals.filter((_, index) => index !== indexToDelete));
   };
 
-    // Navigate to FoodStorageTips page
-    const navigateToFoodStorageTips = () => {
-      navigate('/food-storage-tips'); // Updated to use navigate
-    };
-
+  // Navigate to FoodStorageTips page
+  const navigateToFoodStorageTips = () => {
+    navigate('/food-storage-tips'); // Updated to use navigate
+  };
   return (
     <div>
       {/* Banner with title and image */}
@@ -82,15 +114,9 @@ const Leftovers = () => {
       {/* Meal submission section */}
       <div className="bodyContainer">
         <h1 style={{ fontSize: '36px', marginLeft: '50px' }}>Add a Meal</h1>
-        <div className="input-container">
-          <input className="text-box" type="text" value={mealName} onChange={handleNameChange} placeholder="Enter a meal" />
-          <button className="Submit-button" onClick={handleSubmitClick}>
-            <img src={addSymbol} alt="Add" className="button-icon" />
-          </button>
-        </div>
 
-        {/* List of submitted meals */}
-        <ul>
+{/* List of submitted meals */}
+<ul>
           {submittedMeals.map((meal, index) => (
             <li key={index}>
               <div className="AddMealContainer">
@@ -120,7 +146,7 @@ const Leftovers = () => {
         </ul>
       </div>
 
-      {/* Display recently completed meals */}
+      {/* Additional component sections */}
       <h3 style={{ fontSize: '36px', marginLeft: '50px' }}>Recent Completed</h3>
       <div className="Recent-Completed-Items">
         {completedMeals.map((name, index) => (

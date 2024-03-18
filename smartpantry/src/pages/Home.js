@@ -53,7 +53,7 @@ const Home = () => {
             <div className="recipe-details">
               {/* Recipe Title */}
               <div className="recipe-title">{recipe.title}</div>
-              Ingredients:
+              <strong>Ingredients:</strong>
               <ul>
                 {/* Mapping through ingredients */}
                 {recipe.ingredients.map((ingredient, idx) => (

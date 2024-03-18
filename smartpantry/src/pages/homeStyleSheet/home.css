@@ -38,29 +38,24 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%; /* Retain this if you want it to be responsive */
-  min-width: 500px; /* Example: Ensure a minimum width */
+  width: 100%; /* Or a specific width if you prefer */
 }
-
 
 .search-input {
   width: 100%;
-  padding: 10px; 
-  font-size: 1em; 
-  border: 2px solid #ccc; /* Border color and width for visual distinction */
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
-  text-align: left; 
-  box-sizing: border-box; /* Ensures padding does not affect the overall width */
-  color: black; /* Text color for readability */
+  padding: 10px 40px; /* Adjust left and right padding to make space for icons */
+  font-size: 1em;
+  border: 2px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative; /* Ensure the input is positioned relatively within its parent */
 }
-
 
 .search-icon {
   position: absolute;
-  left: 10px; /* Adjust if you have an icon and want it inside the input on the left */
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none; /* Ensures the icon doesn't interfere with input functionality */
+  top: 50%; /* Align vertically at the center of the input */
+  transform: translateY(-50%); /* Adjust vertically to truly center the icon */
+  width: 20px; /* Smaller width for a 'tiny' appearance */
+  height: 20px; /* Equal height to maintain aspect ratio */
 }
 
 .search-left {
@@ -94,6 +89,7 @@
 
 .my-recipes {
   font-size: 3em;
+  font-family: Inika;
 }
 
 .create-recipe {
@@ -104,6 +100,7 @@
   background: none; /* Remove background */
   border: none; /* Remove border */
   text-decoration: underline; /* Optional: if you want it to look clickable */
+  font-family: Inika;
 }
 
 .recipe {
@@ -116,17 +113,20 @@
   display: inline-block;
   vertical-align: top;
   width: 70%;
+  font-family: Inika;
 }
 
 .recipe-title {
   font-size: 1.2em; /* Increase font size for recipe titles */
   font-weight: bold; /* Make recipe titles bold */
+  font-family: Inika;
 }
 
 .recipe-time-more {
   text-align: right;
   float: right;
   width: 28%;
+  font-family: Inika;
 }
 
 .recently-searched-container {
@@ -151,10 +151,12 @@
 
 .bullet {
   margin-right: 10px; /* Adjust spacing between bullet and text */
+  font-size: 10px;
 }
 
 .ingredient-text {
   /* Additional styling for the ingredient text if needed */
+  font-family: Inika;
 }
 
 .banner {
@@ -206,4 +208,17 @@
   position: relative; /* Ensure the input is positioned relatively within its parent */
 }
 
+.recent-searches {
+  font-size: 40px;
+  font-family: Inika;
+}
 
+@font-face {
+  font-family: NotoSans;
+  src: url(../fonts/NotoSans.ttf);
+}
+
+@font-face {
+font-family: Inika;
+src: url(../fonts/Inika-Regular.ttf);
+}

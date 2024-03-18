@@ -9,11 +9,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color:black;
-  padding: 100px 300px;
+  padding: 75px 200px;
   border: 2px solid white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, .8);
-  font-size: 64px;
+  font-size: 32px;
 }
 
 

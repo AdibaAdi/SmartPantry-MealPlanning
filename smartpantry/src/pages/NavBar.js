@@ -3,7 +3,7 @@ import styles from './pages.module.css';
 import React from 'react';
 import recipes from './images/recipes.png'
 import leftovers from './images/leftovers.png'
-import plan from './images/plan.png'
+import plan from './foodstorage/image_prev_ui.png'
 import book from './images/book.png'
 
 

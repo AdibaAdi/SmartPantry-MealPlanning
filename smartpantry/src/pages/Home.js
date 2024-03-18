@@ -1,12 +1,26 @@
-import React, { useState } from 'react'; // Import useState for handling input state
-import { Link, useNavigate } from 'react-router-dom'; // Corrected duplicate import
-import './homeStyleSheet/home.css'; 
-import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg'; 
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './homeStyleSheet/home.css';
+import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg';
 import './moreInfoStyleSheet/moreinfo.css';
 
 const Home = () => {
-  const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
-  const navigate = useNavigate(); // Hook to programmatically navigate
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (inputRef.current) {
+        inputRef.current.style.width = 'auto';
+        inputRef.current.style.width = `${inputRef.current.scrollWidth + 20}px`;
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [searchQuery]);
 
   const recipes = [
     { title: "Pancakes", ingredients: ["Egg", "Flour", "Vanilla extract"], time: "8 minutes" },
@@ -15,12 +29,12 @@ const Home = () => {
   ];
 
   const handleSearchInput = (event) => {
-    setSearchQuery(event.target.value); // Update state with current input
+    setSearchQuery(event.target.value);
   };
 
   const handleSearchSubmit = (event) => {
-    event.preventDefault(); // Prevent the form from causing a page reload
-    navigate(`/searching/${searchQuery}`); // Navigate to the search results page
+    event.preventDefault();
+    navigate(`/searching/${searchQuery}`);
   };
 
   return (
@@ -28,14 +42,15 @@ const Home = () => {
       <div className="banner">
         <img src={bluefoodimage} alt="" />
         <div className="search-section">
-          <form onSubmit={handleSearchSubmit}> {/* Add form element with submit handler */}
+          <form onSubmit={handleSearchSubmit}>
             <div className="input-wrapper">
-              <input 
-                type="text" 
-                placeholder="Search recipe by name, ingredients, etc." 
+              <input
+                type="text"
+                placeholder="Search recipe by name, ingredients, etc."
                 className="search-input"
-                onChange={handleSearchInput} // Add change handler to update state
-                value={searchQuery} // Set input value to be controlled by state
+                onChange={handleSearchInput}
+                value={searchQuery}
+                ref={inputRef}
               />
             </div>
           </form>

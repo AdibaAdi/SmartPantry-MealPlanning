@@ -5,9 +5,9 @@ import NavBar from "./pages/NavBar";
 import Leftovers from "./pages/Leftovers";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
-import Login from "./pages/loginUI/Login"
-import Register from "./pages/loginUI/Register"
-import CreateRecipe from "./pages/CreateRecipe"
+import Login from "./pages/loginUI/Login";
+import Register from "./pages/loginUI/Register";
+import CreateRecipe from "./pages/CreateRecipe";
 
 export default function App() {
   return (

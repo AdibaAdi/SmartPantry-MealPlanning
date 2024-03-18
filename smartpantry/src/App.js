@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Axios from "axios";
 
 function App() {
+  const [data, setData] = useState();
+
+  const getData = async () => {
+    const response = await Axios.get("http://localhost:8000/getData");
+    setData(response.data);
+  }
+  
+  useEffect(()=> {
+    getData()
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">

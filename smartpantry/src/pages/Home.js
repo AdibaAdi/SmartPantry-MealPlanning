@@ -23,7 +23,7 @@ const Home = () => {
   myHeaders.append("Content-Type", "application/json");
 
   const raw = JSON.stringify({
-    "user_name": "JaneCool"
+    "user_name": localStorage.getItem("username")
   });
 
   const requestOptions = {

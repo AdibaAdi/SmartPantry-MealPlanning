@@ -127,4 +127,22 @@ li {
     border: 1px solid #000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
+
+  .tipsToStoreFoodBtn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 0; /* Adjust as necessary */
+    display: block; /* Center the button, adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tipsToStoreFoodBtn:hover {
+    background-color: #45a049;
+  }
   

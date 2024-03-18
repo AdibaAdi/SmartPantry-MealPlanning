@@ -89,6 +89,7 @@
 
 .my-recipes {
   font-size: 3em;
+  font-family: Inika;
 }
 
 .create-recipe {
@@ -99,6 +100,7 @@
   background: none; /* Remove background */
   border: none; /* Remove border */
   text-decoration: underline; /* Optional: if you want it to look clickable */
+  font-family: Inika;
 }
 
 .recipe {
@@ -111,17 +113,20 @@
   display: inline-block;
   vertical-align: top;
   width: 70%;
+  font-family: Inika;
 }
 
 .recipe-title {
   font-size: 1.2em; /* Increase font size for recipe titles */
   font-weight: bold; /* Make recipe titles bold */
+  font-family: Inika;
 }
 
 .recipe-time-more {
   text-align: right;
   float: right;
   width: 28%;
+  font-family: Inika;
 }
 
 .recently-searched-container {
@@ -142,14 +147,17 @@
   border: 1px solid #ccc;
   padding: 5px;
   text-align: center;
+  background-color: #f0f0f0;
 }
 
 .bullet {
   margin-right: 10px; /* Adjust spacing between bullet and text */
+  font-size: 10px;
 }
 
 .ingredient-text {
   /* Additional styling for the ingredient text if needed */
+  font-family: Inika;
 }
 
 .banner {
@@ -196,4 +204,17 @@
   position: relative; /* Ensure the input is positioned relatively within its parent */
 }
 
+.recent-searches {
+  font-size: 40px;
+  font-family: Inika;
+}
 
+@font-face {
+  font-family: NotoSans;
+  src: url(../fonts/NotoSans.ttf);
+}
+
+@font-face {
+font-family: Inika;
+src: url(../fonts/Inika-Regular.ttf);
+}

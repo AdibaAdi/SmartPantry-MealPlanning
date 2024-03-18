@@ -4,10 +4,48 @@ import './homeStyleSheet/home.css';
 import bluefoodimage from './homeStyleSheet/bluefoodimage.jpg';
 import './moreInfoStyleSheet/moreinfo.css';
 
+function parseData(recipe_data) {
+  let arr = [];
+
+  for (let i = 0; i < recipe_data.length; i++) {
+    arr.push({ title: recipe_data[i].recipe_name, ingredients: recipe_data[i].ingredients, time: recipe_data[i].time });
+  }
+  return arr;
+}
+
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
+  const [userResults, setUserResults] = useState([]);
   const inputRef = useRef(null);
+
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({
+    "user_name": "JaneCool"
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/recipes/getMyRecipes", requestOptions);
+        const data = await response.json();
+        setUserResults(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,12 +60,6 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [searchQuery]);
 
-  const recipes = [
-    { title: "Pancakes", ingredients: ["Egg", "Flour", "Vanilla extract"], time: "8 minutes" },
-    { title: "Grilled Cheese", ingredients: ["Cheese", "Bread", "Butter"], time: "5 minutes" },
-    { title: "Smoothie", ingredients: ["Banana", "Milk", "Honey", "Ice"], time: "5 minutes" },
-  ];
-
   const handleSearchInput = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -36,6 +68,11 @@ const Home = () => {
     event.preventDefault();
     navigate(`/searching/${searchQuery}`);
   };
+
+  let recipes = [];
+  if (userResults.length > 0) {
+    recipes = parseData(userResults);
+  }
 
   return (
     <div className="home">
@@ -56,30 +93,24 @@ const Home = () => {
           </form>
         </div>
       </div>
-      {/* Container for recipes */}
       <div className="recipes-container">
         <div className="recipes-header">
           <h1 className="my-recipes">My Recipes</h1>
           <Link to="/CreateRecipe"><span className="create-recipe">Create a Recipe</span></Link>
         </div>
-        {/* Mapping through recipes */}
         {recipes.map((recipe, index) => (
           <div key={index} className="recipe">
             <div className="recipe-details">
-              {/* Recipe Title */}
               <div className="recipe-title">{recipe.title}</div>
               <strong>Ingredients:</strong>
               <ul>
-                {/* Mapping through ingredients */}
                 {recipe.ingredients.map((ingredient, idx) => (
                   <li key={idx}>{ingredient}</li>
                 ))}
               </ul>
             </div>
             <div className="recipe-time-more">
-              {/* Recipe Time */}
               Estimated Time: {recipe.time}
-              {/* More Link */}
               <div>
                 <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link">More →</Link>
               </div>
@@ -87,14 +118,11 @@ const Home = () => {
           </div>
         ))}
       </div>
-      {/* Container for recently searched ingredients */}
       <div className="recently-searched-container">
         <h2 className="recent-searches">Recently Searched Ingredients</h2>
         <div className="ingredients-grid">
-          {/* Mapping through recently searched ingredients */}
           {["Carrots", "Broth", "Watermelon", "Pumpkin Seeds", "Tomatoes", "Cucumber", "Spinach", "Mushrooms", "Chicken", "Rice", "Beans", "Cheese"].map((ingredient, index) => (
             <span key={index} className="ingredient">
-              {/* Bullet */}
               <span className="bullet">⚫</span><span className="ingredient-text">{ingredient}</span>
             </span>
           ))}

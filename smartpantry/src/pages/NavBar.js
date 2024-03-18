@@ -8,6 +8,13 @@ import book from './images/book.png'
 
 
 const NavBar = () => {
+  const clearUser = () => {
+    localStorage.setItem("username","None");
+    window.location.replace("./loginUI");
+  }
+  if(localStorage.getItem("username") == "None")
+    return window.location.replace("./loginUI");
+  else
   return (
     <div className={styles.navBarContainer}>
       
@@ -21,8 +28,8 @@ const NavBar = () => {
         </div>
         <div className={styles.signOutContainer}>
             {/*Link back to Login page*/}
-            <p className={styles.signOutText} style={{fontFamily:'NotoSans'}}>HELLO, USERNAME</p> {/*Pull username from database*/}
-            <Link to="/loginUI" style={{color: 'inherit'}}><p className={styles.signOutText}>Sign Out</p></Link>
+            <p className={styles.signOutText} style={{fontFamily:'NotoSans'}}>HELLO, {localStorage.getItem("username")}</p> {/*Pull username from database*/}
+            <button onClick={clearUser} style={{color: 'inherit'}} className={styles.signOutText}><p>Sign Out</p></button>
         </div>
       </div>
 

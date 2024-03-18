@@ -3,6 +3,8 @@ import logo from '../images/book.png'
 
 function Login () {
   
+
+
   const loginFunction = () => {
 
     const inputtedUsername = document.getElementById('logUsername').value;
@@ -26,11 +28,13 @@ function Login () {
     fetch("http://localhost:8000/api/users/login", requestOptions)
       .then((response) => response.status)
       .then((result) => {
-        if(result == 200)
-        window.location.replace("./")
+        if(result == 200){
+          localStorage.setItem("username",inputtedUsername);
+        window.location.replace("../");
+        }
       })
       .catch((error) => console.error(error));
-    }
+}
  
   return (
       <div className={styles.loginWrapper}>

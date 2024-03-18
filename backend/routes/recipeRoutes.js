@@ -10,6 +10,8 @@ router.post('/nutrition', recipeController.getNutritionData);
 
 router.get('/all', recipeController.getAllRecipes);
 
-router.get('/getMyRecipes', recipeController.getUserRecipes);
+router.post('/getMyRecipes', recipeController.getUserRecipes);
+
+router.post('/addRecipe', recipeController.addRecipe)
 
 module.exports = router;

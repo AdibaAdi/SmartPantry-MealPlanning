@@ -29,11 +29,19 @@ function CreateRecipe () {
         }
     }
 
+    const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+
     const saveRecipeFunction = () => {
+        //verifies the cook and prep time are in mins
+        if(!/^\d+$/.test(document.getElementById('prep').value) || !/^\d+$/.test(document.getElementById('cook').value)){ 
+            alert('Please enter cook and prep time in minutes');
+            return;
+        }
+        console.log(genRanHex(24));
         const recipeData = {
           name: document.getElementById('recipeName').value,
           ingredients:[],
-          steps: document.getElementById('steps').value,
+          steps: [],
           servings: document.getElementById('servings').value,
           prep: document.getElementById('prep').value,
           cook: document.getElementById('cook').value,
@@ -45,9 +53,41 @@ function CreateRecipe () {
             Variables[i] = document.getElementById('ingrName' + i).value + "_" + document.getElementById('ingrAmt' + i).value + "_" + document.getElementById('ingrUnit' + i).value;
             recipeData.ingredients.push(Variables[i]);
         }
-        document.getElementById('exitText').innerHTML = 'Exit (Saved)'
-        alert(JSON.stringify(recipeData));
+        
+
+        const myHeaders = new Headers();
+
+        myHeaders.append("Content-Type", "application/json");
+        recipeData.steps = document.getElementById('steps').value.split(/\r?\n/) ;
+
+
+        const raw = JSON.stringify({
+        "_id": genRanHex(24),
+        "recipe_name": document.getElementById('recipeName').value,
+        "description": document.getElementById('notes').value,
+        "ingredients": recipeData.ingredients,
+        "time": parseInt(document.getElementById('prep').value, 10) + parseInt(document.getElementById('cook').value, 10),
+        "steps":recipeData.steps,
+        "user_name": localStorage.getItem("username")
+        });
+
+        const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+        };
+
+        fetch("http://localhost:8000/api/recipes/addRecipe", requestOptions)
+        .then((response) => response.text())
+        .then(() => {
+            document.getElementById('exitText').innerHTML = 'Exit (Saved)'
+        })
+        .catch((error) => console.error(error));
+
+
     }
+ 
 
     return( 
         <div>
@@ -98,9 +138,9 @@ function CreateRecipe () {
                             <p className={styles.recipeTitleText}>Servings:</p>
                             <textarea placeholder='Servings' className={styles.recipeSteps} cols="50" rows="1" id='servings'></textarea>
                             <p className={styles.recipeTitleText}>Prep Time:</p>
-                            <textarea placeholder='Prep Time' className={styles.recipeSteps} cols="50" rows="1" id='prep'></textarea>
+                            <textarea placeholder='Enter time in minutes' className={styles.recipeSteps} cols="50" rows="1" id='prep'></textarea>
                             <p className={styles.recipeTitleText}>Cook Time:</p>
-                            <textarea placeholder='Cook Time' className={styles.recipeSteps} cols="50" rows="1" id='cook'></textarea>
+                            <textarea placeholder='Enter time in minutes' className={styles.recipeSteps} cols="50" rows="1" id='cook'></textarea>
                             <p className={styles.recipeTitleText}>Notes:</p>
                             <textarea placeholder='Notes' className={styles.recipeSteps} cols="50" rows="10" id='notes'></textarea>
                             <div className={styles.saveRecipeContainer}>

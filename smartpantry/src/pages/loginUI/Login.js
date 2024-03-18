@@ -14,7 +14,7 @@ function Login () {
     myHeaders.append("Content-Type", "application/json");
     
     const raw = JSON.stringify({
-      "email": inputtedUsername,
+      "user_name": inputtedUsername,
       "password": inputtedPassword
     });
     

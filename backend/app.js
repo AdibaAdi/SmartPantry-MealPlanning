@@ -25,10 +25,12 @@ mongoose.connect(mongoDB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
 // Import routes
 const userRoutes = require('./routes/userRoutes');
 const recipeRoutes = require('./routes/recipeRoutes');
+const leftoverRoutes = require('./routes/leftoverRoutes');
 
 // Use routes
 app.use('/api/users', userRoutes);
 app.use('/api/recipes', recipeRoutes);
+app.use('/api/leftovers', leftoverRoutes);
 
 // Example route
 app.get("/getData", (req, res) => {

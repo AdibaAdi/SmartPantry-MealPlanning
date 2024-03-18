@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './leftoversStyleSheet/leftovers.css';
 import addSymbol from './leftoversStyleSheet/addSymbol.png';
 import delSymbol from './leftoversStyleSheet/delSymbol.png'; // Import delete symbol
@@ -8,6 +9,8 @@ const Leftovers = () => {
   const [mealName, setMealName] = useState('');
   const [submittedMeals, setSubmittedMeals] = useState([]);
   const [completedMeals, setCompletedMeals] = useState([]);
+
+  const navigate = useNavigate(); 
 
   // Handle change in meal name input
   const handleNameChange = (event) => {
@@ -62,6 +65,11 @@ const Leftovers = () => {
     }
     setSubmittedMeals(currentMeals => currentMeals.filter((_, index) => index !== indexToDelete));
   };
+
+    // Navigate to FoodStorageTips page
+    const navigateToFoodStorageTips = () => {
+      navigate('/food-storage-tips'); // Updated to use navigate
+    };
 
   return (
     <div>
@@ -119,9 +127,13 @@ const Leftovers = () => {
           <div key={index}>{name}</div>
         ))}
       </div>
+
+      {/* food storing tips button */}
+      <button className="tipsToStoreFoodBtn" onClick={navigateToFoodStorageTips}>
+        Tips to Store Food
+      </button>
     </div>
   );
 };
 
 export default Leftovers;
-

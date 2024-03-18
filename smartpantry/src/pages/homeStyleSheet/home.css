@@ -199,15 +199,6 @@
   cursor: pointer; /* Change cursor to pointer to indicate clickable */
 }
 
-.search-input {
-  width: 100%;
-  padding: 10px 40px; /* Adjust left and right padding to account for the icons */
-  font-size: 1em;
-  border: 2px solid #ccc;
-  background-color: rgba(255, 255, 255, 0.9);
-  position: relative; /* Ensure the input is positioned relatively within its parent */
-}
-
 .recent-searches {
   font-size: 40px;
   font-family: Inika;

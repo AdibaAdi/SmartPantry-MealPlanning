@@ -76,3 +76,27 @@ exports.getAllRecipes = async (req, res) => {
       res.status(500).send('Server error');
     }
   };
+
+  exports.addRecipe = async(req,res) => {
+    try{
+      console.log('adding recipe');
+      const{ _id, recipe_name, description, ingredients, time, steps, user_name } = req.body;
+      const recipe = new Recipe({
+        _id,
+        recipe_name,
+        description,
+        ingredients,
+        time,
+        steps,
+        user_name
+      });
+      
+      await recipe.save()
+      res.status(201).json('OK');
+
+    } catch (err) {
+      // Log and return any errors encountered
+      console.error(err);
+      res.status(500).send('Server error');
+    }
+  }

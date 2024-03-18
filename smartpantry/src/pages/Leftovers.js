@@ -12,24 +12,7 @@ const Leftovers = () => {
   const [completedMeals, setCompletedMeals] = useState([]);
   const navigate = useNavigate();
 
-  const fetchAndUpdateMeals = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/api/leftovers");
-      if(result === 200){
-        //localStorage.setItem("username",inputtedUsername);
-        //leftover.setItem("leftover_name",inputtedUsername);
-      
-      }else {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const meals = await response.json();
-      setSubmittedMeals(meals);
-    } catch (error) {
-      console.error("There was a problem fetching the meal data:", error);
-    }
-  };
-  
-  //onChange handler
+  // Corrected onChange handler
   const handleLeftoverNameChange = (e) => setLeftoverName(e.target.value);
 
   const handleSubmit = async (e) => {
@@ -60,8 +43,8 @@ const Leftovers = () => {
     } catch (error) {
       console.error('Error adding leftover:', error);
     }
-    fetchAndUpdateMeals();
   };
+
   // Function to calculate the number of days since the meal was cooked
   const amountOfDays = (date) => {
     const now = new Date();
@@ -114,31 +97,27 @@ const Leftovers = () => {
       {/* Meal submission section */}
       <div className="bodyContainer">
         <h1 style={{ fontSize: '36px', marginLeft: '50px' }}>Add a Meal</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            ref={inputRef} // Attach ref to input element
+            className="text-box"
+            type="text"
+            value={leftoverName}
+            onChange={handleLeftoverNameChange} // Corrected onChange handler
+            placeholder="Enter a meal"
+          />
+          <button type="submit" className="Submit-button">
+            <img src={addSymbol} alt="Add" className="button-icon" />
+          </button>
+        </form>
 
-{/* List of submitted meals */}
-<ul>
+        {/* List of submitted meals */}
+        <ul>
           {submittedMeals.map((meal, index) => (
             <li key={index}>
               <div className="AddMealContainer">
                 <div className="meal-item">
-                  <div className="meal-name">
-                    {meal.name}
-                    {/* Delete button */}
-                    <button className="deleteButton" onClick={() => deleteMeal(index)}>
-                      <img src={delSymbol} alt="Delete" className="button-icon" />
-                    </button>
-                  </div>
-                  {/* Meal date and time */}
-                  <div className="meal-date-container">
-                    <span className="meal-date">Cooked on {new Date(meal.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                    <span className="meal-time-span"> at {new Date(meal.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</span>
-                  </div>
-                  {/* Display how many days ago the meal was cooked */}
-                  <div className="meal-days-ago">{amountOfDays(meal.date)} days ago</div>
-                  {/* Button to toggle meal completion status */}
-                  <button className="changeStatus" onClick={() => toggleMealStatus(index)}>
-                    {meal.status === 'N' ? 'Complete' : 'Completed'}
-                  </button>
+                  {/* Meal item content */}
                 </div>
               </div>
             </li>
@@ -146,8 +125,8 @@ const Leftovers = () => {
         </ul>
       </div>
 
-      {/* Additional component sections */}
-      <h3 style={{ fontSize: '36px', marginLeft: '50px' }}>Recent Completed</h3>
+        {/* Display recently completed meals */}
+        <h3 style={{ fontSize: '36px', marginLeft: '50px' }}>Recent Completed</h3>
       <div className="Recent-Completed-Items">
         {completedMeals.map((name, index) => (
           <div key={index}>{name}</div>
@@ -158,6 +137,7 @@ const Leftovers = () => {
       <button className="tipsToStoreFoodBtn" onClick={navigateToFoodStorageTips}>
         Tips to Store Food
       </button>
+      
     </div>
   );
 };

@@ -8,11 +8,34 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
   const navigate = useNavigate(); // Hook to programmatically navigate
 
+  //const userName = localstorage.getItem("username");
+
   const recipes = [
     { title: "Pancakes", ingredients: ["Egg", "Flour", "Vanilla extract"], time: "8 minutes" },
     { title: "Grilled Cheese", ingredients: ["Cheese", "Bread", "Butter"], time: "5 minutes" },
     { title: "Smoothie", ingredients: ["Banana", "Milk", "Honey", "Ice"], time: "5 minutes" },
   ];
+
+  // Testing here
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  const raw = JSON.stringify({
+    "user_name": "JaneCool"
+  });
+  
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+  
+  fetch("http://localhost:8000/api/recipes/getMyRecipes", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+  // End testing
 
   const handleSearchInput = (event) => {
     setSearchQuery(event.target.value); // Update state with current input

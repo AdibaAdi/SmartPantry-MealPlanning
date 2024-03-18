@@ -43,9 +43,14 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className={styles.navItem}>
-                <img src={plan} alt="mealplan" className={styles.navImg}/>
-                <p className={styles.navItemText}>Food Storage Tips</p>
-            </div>
+    <img
+        src={require('./foodstorage/image_prev_ui.png')}
+        alt="mealplan"
+        className={`${styles.foodStorageImg} ${styles.foodStorageImgPadding}`}
+    />
+    <p className={styles.navItemText}>Food Storage Tips</p>
+
+</div>
             <div className={styles.navItem}>
                 <Link to="/Leftovers" style={{color: 'inherit', textDecoration: 'inherit'}}>
                     <img src={leftovers} alt="Leftovers" className={styles.navImg}/>

@@ -45,6 +45,9 @@ text-align: center;
 .signOutText {
 color: inherit;
 margin: 0%;
+background-color: #000000;
+text-decoration: underline;
+font-family: NotoSans;
 }
 .navBarContainer{
 background-color: #fff;

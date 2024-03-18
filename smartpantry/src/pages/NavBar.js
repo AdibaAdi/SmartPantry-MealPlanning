@@ -12,7 +12,7 @@ const NavBar = () => {
     localStorage.setItem("username","None");
     window.location.replace("./loginUI");
   }
-  if(localStorage.getItem("username") == "None")
+  if(localStorage.getItem("username") === "None")
     return window.location.replace("./loginUI");
   else
   return (

@@ -32,18 +32,18 @@ function CreateRecipe () {
     const saveRecipeFunction = () => {
         const recipeData = {
           name: document.getElementById('recipeName').value,
-          ingredients: document.getElementById('ingrName').value + "_" + document.getElementById('ingrAmt').value + "_" + document.getElementById('ingrUnit').value,
+          ingredients:[],
           steps: document.getElementById('steps').value,
           servings: document.getElementById('servings').value,
           prep: document.getElementById('prep').value,
           cook: document.getElementById('cook').value,
           notes: document.getElementById('notes').value
         }
-        
+        recipeData.ingredients.push(document.getElementById('ingrName').value + "_" + document.getElementById('ingrAmt').value + "_" + document.getElementById('ingrUnit').value);
         let Variables = []
         for (let i = 1; i < ingrCount; i++) {
             Variables[i] = document.getElementById('ingrName' + i).value + "_" + document.getElementById('ingrAmt' + i).value + "_" + document.getElementById('ingrUnit' + i).value;
-            recipeData.ingredients += " | " + Variables[i];
+            recipeData.ingredients.push(Variables[i]);
         }
         document.getElementById('exitText').innerHTML = 'Exit (Saved)'
         alert(JSON.stringify(recipeData));

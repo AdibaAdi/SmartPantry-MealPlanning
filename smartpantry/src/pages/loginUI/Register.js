@@ -30,7 +30,7 @@ function Register  () {
       .then((response) => response.status)
       .then((result) => {
         console.log(result);
-        if(result == 201)
+        if(result === 201)
         window.location.replace("./")
       })
       .catch((error) => console.error(error));

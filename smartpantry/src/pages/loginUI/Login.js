@@ -28,7 +28,7 @@ function Login () {
     fetch("http://localhost:8000/api/users/login", requestOptions)
       .then((response) => response.status)
       .then((result) => {
-        if(result == 200){
+        if(result === 200){
           localStorage.setItem("username",inputtedUsername);
         window.location.replace("../");
         }

@@ -15,17 +15,20 @@ import Searching from './pages/Searching'; // Import the Searching component
 function App() {
   return (
     <BrowserRouter>
-      <NavBar /> {/* NavBar rendered here to show on all pages */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="RecipeSearch" element={<RecipeSearch />} />
-        <Route path="Leftovers" element={<Leftovers />} />
-        <Route path="CreateRecipe" element={<CreateRecipe />} />
-        <Route path="recipe-details/:recipeTitle" element={<MoreInfo />} />
-        <Route path="searching/:searchQuery" element={<Searching />} /> {/* New route for Searching */}
-        <Route path="loginUI" element={<Login />} />
-        <Route path="loginUI/Register" element={<Register />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/" element={<NavBar />} >
+          <Route index element={<Home />} />
+          <Route path="RecipeSearch" element={<RecipeSearch />} />
+          <Route path="Leftovers" element={<Leftovers />} />
+          <Route path="CreateRecipe" element={<CreateRecipe />} />
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="recipe-details/:recipeTitle" element={<MoreInfo />} />
+          <Route path="searching/:searchQuery" element={<Searching />} /> {/* New route for Searching */}
+        </Route>
+        <Route path="/loginUI">
+          <Route index element = {<Login/>}/>
+          <Route path="Register" element={<Register />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

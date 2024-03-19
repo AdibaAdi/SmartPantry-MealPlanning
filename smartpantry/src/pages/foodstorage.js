@@ -1,6 +1,7 @@
 import React from 'react';
 import './foodstorage/foodstorage.css'; 
 import foodStorageLogo from './foodstorage/foodstorage logo.jpg'; 
+import foodStorageBanner from './foodstorage/banner.jpg'
 import Meat from './foodstorage/meat.jpeg';  
 import poultry from './foodstorage/poultry.jpg';
 import Seafood from './foodstorage/seafood.jpg'; 
@@ -13,9 +14,9 @@ const Foodstorage = () => {
   return (
     <div>
       {/* Banner with title and image */}
-      <div className="banner">
-        <h1 className="banner-title">Food Storage Tips</h1>
-        <img src={foodStorageLogo} alt="Food Storage Tips" style={{ width: '100%', height: 'auto' }} />
+      <div className="banner-food">
+        <h1 className="banner-title-food">Food Storage Tips</h1>
+        <img src={foodStorageBanner} alt="Food Storage Tips" style={{ width: '100%', height: 'auto' }} />
       </div>
       <div className="topLinks">
         <a href="#red"><p>Red Meat</p></a>

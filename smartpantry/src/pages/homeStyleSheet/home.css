@@ -74,7 +74,8 @@
 
 .recipes-container {
   border: 1px solid #ccc;
-  padding: 20px;
+  padding-left: 250px;
+  padding-right: 250px;
   margin-bottom: 20px;
   background-color: #ffffff; /* Ensures white background around recipes and button */
 }
@@ -91,8 +92,7 @@
 }
 
 .create-recipe {
-  padding: 5px 10px;
-  font-size: 0.8em;
+  font-size: 30px;
   cursor: pointer;
   color: black; /* Set text color to black */
   background: none; /* Remove background */
@@ -128,7 +128,7 @@
 }
 
 .recently-searched-container {
-  padding: 40px;
+  padding: 20px 250px 100px 250px;
 }
 
 .ingredients-grid {

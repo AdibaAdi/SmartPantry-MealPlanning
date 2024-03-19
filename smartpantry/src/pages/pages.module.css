@@ -44,7 +44,11 @@ float: left;
   display: flex;
   align-items: center;
 }
-
+.titleText{
+  color: white;
+  font-family: NotoSans;
+  font-size: 40px;
+}
 .signOutText {
   color: inherit;
   margin: 0%;

@@ -1,7 +1,28 @@
 .banner-title {
   text-align: center;
-  margin: 20px 0;
+  margin: 0px 0;
   font-family: Inika;
+  font-size: 40px;
+}
+.banner-title-food {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  color:black;
+  padding: 0px 200px;
+  border: 2px solid white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, .8);
+  font-size: 40px;
+  text-align: center;
+  font-family: Inika;
+}
+.banner-food{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 330px; /* Adjust height as needed */
 }
 
 .bodyContainer {

@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import './searchingStyleSheet/searching.css';
 import transparentImage from './searchingStyleSheet/transparent.png';
 
+const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+
 const Searching = () => {
   const { searchQuery } = useParams();
   const [searchResults, setSearchResults] = useState([]);
@@ -16,10 +18,13 @@ const Searching = () => {
       const isValidTime = typeof recipe.totalTime === 'number' && isFinite(recipe.totalTime);
       const time = isValidTime ? recipe.totalTime : 0; // Set a default value if totalTime is not a valid number
   
+
+
       const raw = JSON.stringify({
+        _id: genRanHex(24),
         recipe_name: recipe.name,
         ingredients: recipe.ingredients.map(ingredient => `${ingredient.text}`),
-        time,
+        time:isValidTime || 15,
         steps: recipe.instructions || [],
         user_name: localStorage.getItem("username"),
         description: recipe.source || '' // Set a default value if recipe.source is undefined
@@ -39,7 +44,7 @@ const Searching = () => {
       // After the recipe is successfully saved, dispatch the 'recipeSaved' event
       window.dispatchEvent(new Event('recipeSaved'));
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

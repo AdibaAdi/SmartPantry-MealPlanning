@@ -23,7 +23,7 @@ const NavBar = () => {
         <div className={styles.titleContainer}>
             <a href="/" style={{color: 'inherit', textDecoration: 'inherit' }}>
                 <img src={book} alt="Home" className={styles.titleImg}/>
-                <p  className={styles.titleText}>SmartPantry</p>
+                <p className={styles.titleText}>SmartPantry</p>
             </a>
         </div>
         <div className={styles.signOutContainer}>

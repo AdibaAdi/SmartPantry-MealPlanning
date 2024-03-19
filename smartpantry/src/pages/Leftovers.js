@@ -133,9 +133,7 @@ const Leftovers = () => {
 
       </div>
       {/* food storing tips button */}
-      <button className="tipsToStoreFoodBtn" onClick={navigateToFoodStorageTips}>
-        Tips to Store Food
-      </button>
+      
       
       
     </div>

@@ -52,10 +52,12 @@
   white-space: nowrap; 
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 .deleteButton {
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .button-icon {

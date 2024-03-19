@@ -112,7 +112,7 @@ const Home = () => {
             <div className="recipe-time-more">
               Estimated Time: {recipe.time}
               <div>
-                <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link">More →</Link>
+                <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link"></Link>
               </div>
             </div>
           </div>

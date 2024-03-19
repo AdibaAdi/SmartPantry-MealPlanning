@@ -115,11 +115,19 @@ function CreateRecipe () {
                                     <input type='text' placeholder='Ingredient' className={styles.recipeIngredientBox} id='ingrName'></input>
                                     <input type='text' placeholder='Amount' className={styles.recipeAmountBox} id='ingrAmt'></input>
                                     <select className={styles.recipeSelectBox} id='ingrUnit'> 
-                                        <option value="oz">oz</option>
-                                        <option value="tsp">tsp</option>
-                                        <option value="tbsp">tbsp</option>
-                                        <option value="lb">lb</option>
-                                        <option value="ct">ct</option>
+                                        
+                                    <option value="cup">cup</option>
+                                    <option value="pt">pt</option>
+                                    <option value="qt">qt</option>
+                                    <option value="gal">gal</option>
+                                    <option value="pinch">pinch</option>
+                                    <option value="dash">dash</option>
+                                    <option value="tsp">tsp</option>
+                                    <option value="tbsp">tbsp</option>
+                                    <option value="oz">oz</option>
+
+
+
                                     </select>
                                     <br></br>
                                 </div>

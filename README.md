@@ -9,8 +9,6 @@ Welcome to SmartPantry! It's a revolutionary meal planning application designed 
 
     Create Your Own Recipes: Got a family recipe or a creative concoction? Easily add it to your personal recipe book within the app. Include ingredients, steps, and photos to guide others.
 
-    Meal Planning Made Easy: Organize your meals for the week with our intuitive meal planning tool. Save time and reduce stress by knowing exactly what's on the menu each day.
-
     Food Storage Tips: Learn the best practices for storing different types of food, ensuring longevity and freshness. SmartPantry offers advice on everything from pantry staples to perishable produce.
 
     Reduce Food Waste: By planning meals efficiently and storing food correctly, SmartPantry helps minimize waste and save money, adding to one of the innovative solution for global food challenge.

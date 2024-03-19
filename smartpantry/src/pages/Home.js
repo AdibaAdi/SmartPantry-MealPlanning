@@ -19,32 +19,39 @@ const Home = () => {
   const [userResults, setUserResults] = useState([]);
   const inputRef = useRef(null);
 
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+  const fetchUserRecipes = async () => {
+    try {
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
 
-  const raw = JSON.stringify({
-    "user_name": localStorage.getItem("username")
-  });
+      const raw = JSON.stringify({
+        "user_name": localStorage.getItem("username")
+      });
 
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow"
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+      };
+
+      const response = await fetch("http://localhost:8000/api/recipes/getMyRecipes", requestOptions);
+      const data = await response.json();
+      setUserResults(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:8000/api/recipes/getMyRecipes", requestOptions);
-        const data = await response.json();
-        setUserResults(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    fetchUserRecipes();
 
-    fetchData();
+    // Listen for a specific event that indicates a recipe has been saved
+    window.addEventListener('recipeSaved', fetchUserRecipes);
+
+    return () => {
+      window.removeEventListener('recipeSaved', fetchUserRecipes);
+    };
   }, []);
 
   useEffect(() => {

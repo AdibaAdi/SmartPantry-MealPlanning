@@ -30,6 +30,19 @@
   padding-right: 5px;
 }
 
+.search-results-container {
+  position: relative;
+  min-height: 100vh; 
+}
+
+.bottom-left-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: auto;
+}
+
 .search-results-container h1 {
   color: #555;
 }

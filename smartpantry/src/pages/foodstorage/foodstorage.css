@@ -28,6 +28,7 @@
 p {
   font-size: 30px;
   font-family: Inika;
+  color: black;
 }
 
 h2 {
@@ -55,6 +56,12 @@ h4 {
   margin-right: auto;
   width: 50%;
 }
+.topLinks{
+  justify-content: space-evenly;
+  display: flex;
+  font-family: NotoSans;
+}
+
 
 @font-face {
   font-family: NotoSans;

@@ -23,6 +23,7 @@
 .recipe-result li {
   padding-left: 1em;
   text-indent: -1em;
+  font-family: NotoSans;
 }
 
 .recipe-result li:before {
@@ -45,4 +46,8 @@
 
 .search-results-container h1 {
   color: #555;
+}
+@font-face {
+  font-family: NotoSans;
+  src: url(../fonts/NotoSans.ttf);
 }

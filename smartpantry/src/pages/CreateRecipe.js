@@ -47,10 +47,10 @@ function CreateRecipe () {
           cook: document.getElementById('cook').value,
           notes: document.getElementById('notes').value
         }
-        recipeData.ingredients.push(document.getElementById('ingrName').value + "_" + document.getElementById('ingrAmt').value + "_" + document.getElementById('ingrUnit').value);
+        recipeData.ingredients.push(document.getElementById('ingrAmt').value + " " + document.getElementById('ingrUnit').value + " of " + document.getElementById('ingrName').value);
         let Variables = []
         for (let i = 1; i < ingrCount; i++) {
-            Variables[i] = document.getElementById('ingrName' + i).value + "_" + document.getElementById('ingrAmt' + i).value + "_" + document.getElementById('ingrUnit' + i).value;
+            Variables[i] = document.getElementById('ingrAmt' + i).value + " " + document.getElementById('ingrUnit' + i).value + " of " + document.getElementById('ingrName' + i).value;
             recipeData.ingredients.push(Variables[i]);
         }
         

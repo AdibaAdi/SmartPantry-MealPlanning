@@ -128,7 +128,7 @@
 }
 
 .recently-searched-container {
-  padding-top: 20px;
+  padding: 40px;
 }
 
 .ingredients-grid {
@@ -145,6 +145,7 @@
   border: 1px solid #ccc;
   padding: 5px;
   text-align: center;
+  cursor: pointer;
 }
 
 .bullet {
@@ -154,6 +155,7 @@
 
 .ingredient-text {
   /* Additional styling for the ingredient text if needed */
+  text-decoration: underline;
   font-family: Inika;
 }
 

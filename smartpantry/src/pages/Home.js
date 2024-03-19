@@ -13,6 +13,10 @@ function parseData(recipe_data) {
   return arr;
 }
 
+const testFxn = (ingredient) =>{
+  window.location.replace(`/searching/${ingredient}`)
+}
+
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -117,7 +121,7 @@ const Home = () => {
               </ul>
             </div>
             <div className="recipe-time-more">
-              Estimated Time: {recipe.time}
+              Estimated Time: {recipe.time} minutes
               <div>
                 <Link to={`/recipe-details/${recipe.title.replace(/\s+/g, '-').toLowerCase()}`} className="more-link"></Link>
               </div>
@@ -126,11 +130,11 @@ const Home = () => {
         ))}
       </div>
       <div className="recently-searched-container">
-        <h2 className="recent-searches">Recently Searched Ingredients</h2>
+        <h2 className="recent-searches">Popular Ingredients To Search</h2>
         <div className="ingredients-grid">
-          {["Carrots", "Broth", "Watermelon", "Pumpkin Seeds", "Tomatoes", "Cucumber", "Spinach", "Mushrooms", "Chicken", "Rice", "Beans", "Cheese"].map((ingredient, index) => (
+          {["Basil", "Chicken Broth", "Watermelon", "Pumpkin Seeds", "Tomatoes", "Cucumber", "Spinach", "Mushrooms", "Olives", "Caldo de Tomate ", "Beans", "Cheese"].map((ingredient, index) => (
             <span key={index} className="ingredient">
-              <span className="bullet">⚫</span><span className="ingredient-text">{ingredient}</span>
+              <span className="bullet">⚫</span><span onClick={() => testFxn(ingredient)} className="ingredient-text">{ingredient}</span>
             </span>
           ))}
         </div>

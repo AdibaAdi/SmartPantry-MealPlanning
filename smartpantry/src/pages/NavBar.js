@@ -27,9 +27,8 @@ const NavBar = () => {
             </a>
         </div>
         <div className={styles.signOutContainer}>
-            {/*Link back to Login page*/}
-            <p className={styles.signOutText} style={{fontFamily:'NotoSans'}}>HELLO, {localStorage.getItem("username")}</p> {/*Pull username from database*/}
-            <button onClick={clearUser} style={{color: 'inherit'}} className={styles.signOutText}><p>Sign Out</p></button>
+            <p className={styles.signOutText} style={{fontFamily:'NotoSans'}}>HELLO, {localStorage.getItem("username")}</p>
+            <button onClick={clearUser} style={{color: 'inherit'}} className={styles.signOutBtn}><p className={styles.signOutText}>Sign Out</p></button>
         </div>
       </div>
 

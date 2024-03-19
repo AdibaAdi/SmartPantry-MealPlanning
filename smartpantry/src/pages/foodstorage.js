@@ -17,12 +17,20 @@ const Foodstorage = () => {
         <h1 className="banner-title">Food Storage Tips</h1>
         <img src={foodStorageLogo} alt="Food Storage Tips" style={{ width: '100%', height: 'auto' }} />
       </div>
+      <div className="topLinks">
+        <a href="#red"><p>Red Meat</p></a>
+        <a href="#poultry"><p>Poultry</p></a>
+        <a href="#fish"><p>Fish</p></a>
+        <a href="#fruit"><p>Fruit</p></a>
+        <a href="#veg"><p>Vegetables</p></a>
+        <a href="#dairy"><p>Dairy</p></a>
+      </div>
 
       {/* Content section */}
       <div className="bodyContainer">
         <h2 >Best Practices</h2>
         <div className="section" style={{ marginBottom: '30px' }}>
-          <img src={Meat} alt="Red Meat" style={{ width: '50%', height: 'auto' }} className="center"/>
+          <img src={Meat} alt="Red Meat" style={{ width: '50%', height: 'auto' }} className="center" id="red"/>
           <h3  >Red Meat (Beef, Lamb, Pork)</h3>
           <p  ><strong>Refrigeration:</strong> Store raw red meat in the coldest part of your refrigerator, typically the bottom shelf, and use it within 3-5 days. If you don't plan to use it within this time frame, freeze it.</p>
 
@@ -44,7 +52,7 @@ const Foodstorage = () => {
         </div>
 
         <div className="section" style={{ marginBottom: '30px' }}>
-          <img src={poultry} alt="Poultry" style={{ width: '50%', height: 'auto' }} className="center" />
+          <img src={poultry} alt="Poultry" style={{ width: '50%', height: 'auto' }} className="center" id="poultry" />
           <h3  >Poultry (Chicken, Turkey, Duck)</h3>
           <p  ><strong>Immediate Refrigeration:</strong> Store poultry in the refrigerator immediately after purchasing. Place it in a dish or container to catch any juices and prevent them from contaminating other foods.</p>
           <p  ><strong>Use or Freeze Promptly:</strong> Use fresh poultry within 1-2 days or freeze it. Store it in the original packaging if intact, or rewrap securely in plastic wrap, foil, or freezer paper, or in airtight containers.</p>
@@ -53,7 +61,7 @@ const Foodstorage = () => {
         </div>
 
         <div className="section" style={{ marginBottom: '30px' }}>
-          <img src={Seafood} alt="Fish and Seafood" style={{ width: '50%', height: 'auto' }} className="center"/>
+          <img src={Seafood} alt="Fish and Seafood" style={{ width: '50%', height: 'auto' }} className="center" id="fish"/>
           <h3  >Fish and Seafood</h3>
           <p  ><strong>Refrigeration:</strong> Fresh fish should be used within 1-2 days of purchase. Store it in the coldest part of the refrigerator, on ice if possible, to maintain freshness.</p>
           <p  ><strong>Rinsing and Drying:</strong> Rinse fresh fish under cold water and pat dry with paper towels before storing. This can help remove any bacteria from the surface.</p>
@@ -63,7 +71,7 @@ const Foodstorage = () => {
         </div>
 
         <div className="section" style={{ marginBottom: '30px' }}>
-          <img src={fruits} alt="Fruits" style={{ width: '50%', height: 'auto' }} className="center"/>
+          <img src={fruits} alt="Fruits" style={{ width: '50%', height: 'auto' }} className="center" id="fruit"/>
           <h3  >Fruits</h3>
           <p  ><strong>Ripening Process:</strong> Understand which fruits ripen after picking and which do not. Apples, bananas, and tomatoes continue to ripen after they are picked, whereas citrus fruits, grapes, and berries do not. Store fruits that ripen after picking at room temperature away from direct sunlight to enhance their ripening.</p>
           <p  ><strong>Refrigeration:</strong> Once ripe, most fruits benefit from being stored in the refrigerator to slow further ripening. Exceptions include bananas, melons, and tomatoes until they are ripe.</p>
@@ -73,7 +81,7 @@ const Foodstorage = () => {
         </div>
 
         <div className="section" style={{ marginBottom: '30px' }}>
-          <img src={veggies} alt="Vegetables" style={{ width: '50%', height: 'auto' }} className="center"/>
+          <img src={veggies} alt="Vegetables" style={{ width: '50%', height: 'auto' }} className="center" id="veg"/>
           <h3  >Vegetables</h3>
           <p  ><strong>Humidity Levels:</strong> Vegetables require different humidity levels than fruits. Leafy greens, for instance, do best in a high-humidity environment. Use your refrigerator's crisper drawer settings to manage humidity levels for different types of vegetables.</p>
           <p  ><strong>Root Vegetables:</strong> Store potatoes, sweet potatoes, onions, and garlic in a cool, dark, and well-ventilated place outside of the refrigerator. These vegetables can last a long time under the right conditions but should be kept away from direct sunlight and moisture.</p>
@@ -84,7 +92,7 @@ const Foodstorage = () => {
         </div>
 
         <div className="section" style={{ marginBottom: '30px' }}>
-          <img src={Dairy} alt="Dairy" style={{ width: '50%', height: 'auto' }} className="center"/>
+          <img src={Dairy} alt="Dairy" style={{ width: '50%', height: 'auto' }} className="center" id="dairy"/>
           <h3  >Dairy</h3>
           <h4  >Milk and Cream:</h4>
           <p  ><strong>Refrigerate Promptly:</strong> Always refrigerate milk and cream immediately after purchase and after each use. Do not leave them out at room temperature for extended periods, as this can lead to bacterial growth and spoilage.</p>

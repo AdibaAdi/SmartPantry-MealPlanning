@@ -49,10 +49,17 @@ float: left;
   color: inherit;
   margin: 0%;
   font-size: 16px; /* Adjust this value to your desired size */
+  
 }
-
-.signOutText:first-child {
-  margin-right: 10px; /* Add some spacing between username and Sign Out button */
+.signOutBtn {
+  background-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  margin: 0%;
+  font-size: 16px; /* Adjust this value to your desired size */
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .navBarContainer{

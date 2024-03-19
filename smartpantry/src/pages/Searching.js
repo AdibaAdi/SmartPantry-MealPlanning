@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './searchingStyleSheet/searching.css';
+import transparentImage from './searchingStyleSheet/transparent.png';
+
 
 const Searching = () => {
   const { searchQuery } = useParams();
@@ -39,7 +41,12 @@ const Searching = () => {
   }, [searchQuery]);
 
   return (
+
+    
     <div className="search-results-container">
+      <div className="bottom-left-image">
+      <img src={transparentImage} alt="Transparent Image" />
+    </div>
       <p id="test"></p>
       <h1>Search Results for: {searchQuery}</h1>
       {isLoading ? (

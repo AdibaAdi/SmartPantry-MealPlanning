@@ -22,9 +22,9 @@ SmartPantry is built using the MERN stack, a full-stack web application developm
 # Run Instructions:
 
 1. Clone the repository to your machine
-2. In the 'smartpantry' directory, run the command 'npm install' in the terminal, then run 'npm start'
-3. In the 'backend' directory,  run the command 'npm run start'
-4. Access the website in your browser at http://localhost:3000/
+2. In the `smartpantry` directory, run the command `npm install` in the terminal, then run `npm start`
+3. In the `backend` directory, run the command `npm run start`
+4. Access the website in your browser at `http://localhost:3000/`
 
 # Team Members:
 

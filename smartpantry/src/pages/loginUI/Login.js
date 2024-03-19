@@ -40,6 +40,7 @@ function Login () {
       <div className={styles.loginWrapper}>
         <div className={styles.loginBox}>
           <img src={logo} alt="Logo" className={styles.loginImg}/>
+          <p className={styles.loginTextTitle}>SmartPantry</p>
           <div className={styles.loginTextContainer}>
             <p className={styles.loginText}>Login</p>
           </div>

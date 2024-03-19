@@ -32,6 +32,12 @@
     padding-left: 100px;
     padding-right: 100px;
 }
+.loginTextTitle{
+    justify-content:center;
+    font-family: Inika;
+    font-size: 30px;
+    margin: 0px;
+}
 .loginText{
     justify-content:center;
     font-family: Inika;
@@ -85,4 +91,8 @@
   @font-face {
     font-family: Inika;
     src: url(../fonts/Inika-Regular.ttf);
+  }
+  @font-face {
+    font-family: NotoSans;
+    src: url(../fonts/NotoSans.ttf);
   }

@@ -19,6 +19,7 @@
 .bodyContainer{
   margin-top: 0px;
   margin-left: 0px;
+  padding-left: 10%;
 }
 .input-container {
   display: flex;
@@ -73,7 +74,7 @@ li {
 }
 
 .AddMealContainer {
-    width: 1500px;
+    width: 80%;
     min-height: 150px;
     padding: 10px;
     border: .05px grove;

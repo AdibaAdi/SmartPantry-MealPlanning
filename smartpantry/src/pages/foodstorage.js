@@ -28,7 +28,7 @@ const Foodstorage = () => {
       </div>
 
       {/* Content section */}
-      <div className="bodyContainer">
+      <div className="bodyContainerFood">
         <h2 >Best Practices</h2>
         <div className="section" style={{ marginBottom: '30px' }}>
           <img src={Meat} alt="Red Meat" style={{ width: '50%', height: 'auto' }} className="center" id="red"/>

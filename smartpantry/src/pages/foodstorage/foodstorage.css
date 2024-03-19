@@ -29,6 +29,12 @@
   margin: 20px 50px;
 }
 
+.bodyContainerFood {
+  margin: 20px 50px;
+  padding: 0px 250px;
+  padding-bottom: 30px;
+}
+
 .tips-list {
   list-style-type: disc;
   margin-left: 20px;

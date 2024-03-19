@@ -34,6 +34,4 @@ Samantha Ceralde<br/>
 Jacob Cook<br/>
 Richard Varela<br/>
 
-# License
-
 

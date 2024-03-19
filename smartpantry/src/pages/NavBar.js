@@ -3,7 +3,7 @@ import styles from './pages.module.css';
 import React from 'react';
 import recipes from './images/recipes.png'
 import leftovers from './images/leftovers.png'
-import plan from './images/plan.png'
+import plan from './foodstorage/image_prev_ui.png'
 import book from './images/book.png'
 
 
@@ -43,9 +43,14 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className={styles.navItem}>
-                <img src={plan} alt="mealplan" className={styles.navImg}/>
-                <p className={styles.navItemText}>Meal Plan</p>
-            </div>
+    <img
+        src={require('./foodstorage/image_prev_ui.png')}
+        alt="mealplan"
+        className={`${styles.foodStorageImg} ${styles.foodStorageImgPadding}`}
+    />
+    <p className={styles.navItemText}>Food Storage Tips</p>
+
+</div>
             <div className={styles.navItem}>
                 <Link to="/Leftovers" style={{color: 'inherit', textDecoration: 'inherit'}}>
                     <img src={leftovers} alt="Leftovers" className={styles.navImg}/>

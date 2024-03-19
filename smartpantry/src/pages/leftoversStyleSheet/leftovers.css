@@ -8,19 +8,19 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color:black;
+  color: black;
   padding: 50px 300px;
   border: 2px solid white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 64px;
 }
 
-
-.bodyContainer{
+.bodyContainer {
   margin-top: 0px;
   margin-left: 0px;
 }
+
 .input-container {
   display: flex;
   align-items: center;
@@ -28,9 +28,10 @@
 
 .formContainer {
   display: flex;
-  align-items: center; 
-  gap: 10px; 
+  align-items: center;
+  gap: 10px;
 }
+
 .formSubmit {
   display: flex;
   justify-content: space-between; /* Space out form children */
@@ -54,7 +55,10 @@
   color: white;
   cursor: pointer;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
+
 .deleteButton {
   border: none;
   background: transparent;
@@ -65,95 +69,102 @@
   height: 30px;
 }
 
+/* Add some padding-bottom to the add symbol icon */
+.add-symbol-icon {
+  padding-bottom: 10px;
+}
+
 li {
   position: relative;
 }
 
 .example {
   position: absolute;
-  text-align: center; 
+  text-align: center;
 }
 
 .AddMealContainer {
-    width: 1500px;
-    min-height: 150px;
-    padding: 10px;
-    border: .05px grove;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-bottom: 30px;
-    position: relative;
-    border-radius: 10px; 
-    background-color: #D9D9D9;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  ul {
-    list-style-type: none;
-    padding-left: 0; 
-  }
-  
-  .meal-item {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .meal-name {
-    font-weight: bold;
-    font-size: 50px;
-  }
-  
-  .meal-date, .meal-time-span {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .meal-date-container, .meal-time-container {
-    margin-top: 15px;
-  }
-  
-  .changeStatus {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
-  }
-  
-  .meal-days-ago {
-    font-weight: bold;
-    font-size: 36px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
+  width: 1500px;
+  min-height: 150px;
+  padding: 10px;
+  border: 0.05px groove;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
-  .Recent-Completed-Items {
-    margin-top: 1px;
-    margin-left: 50px;
-    margin-bottom: 30px;
-    font-size: 32px;
-    width: 75%;
-    padding: 10px;
-    border: 1px solid #000;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 
-  .tipsToStoreFoodBtn {
-    background-color: #4CAF50; /* Green background */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 20px 0; /* Adjust as necessary */
-    display: block; /* Center the button, adjust as needed */
-    margin-left: auto;
-    margin-right: auto;
-  }
+.meal-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .tipsToStoreFoodBtn:hover {
-    background-color: #45a049;
-  }
-  
+.meal-name {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.meal-date,
+.meal-time-span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.meal-date-container,
+.meal-time-container {
+  margin-top: 15px;
+}
+
+.changeStatus {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+}
+
+.meal-days-ago {
+  font-weight: bold;
+  font-size: 36px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.Recent-Completed-Items {
+  margin-top: 1px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  font-size: 32px;
+  width: 75%;
+  padding: 10px;
+  border: 1px solid #000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tipsToStoreFoodBtn {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px 0; /* Adjust as necessary */
+  display: block; /* Center the button, adjust as needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tipsToStoreFoodBtn:hover {
+  background-color: #45a049;
+}

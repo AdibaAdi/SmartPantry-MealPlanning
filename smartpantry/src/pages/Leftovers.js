@@ -103,8 +103,8 @@ const Leftovers = () => {
             placeholder="Enter a meal"
           />
           <button type="submit" className="Submit-button">
-            <img src={addSymbol} alt="Add" className="button-icon" />
-          </button>
+  <img src={addSymbol} alt="Add" className="button-icon add-symbol-icon" />
+</button>
         </form>
         </div>
         {/* List of submitted meals */}

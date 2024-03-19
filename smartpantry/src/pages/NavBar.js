@@ -42,15 +42,14 @@ const NavBar = () => {
                     <p className={styles.navItemText}>Recipes</p>
                 </Link>
             </div>
-            <div className={styles.navItem}>
-    <img
-        src={require('./foodstorage/image_prev_ui.png')}
-        alt="mealplan"
-        className={`${styles.foodStorageImg} ${styles.foodStorageImgPadding}`}
-    />
-    <p className={styles.navItemText}>Food Storage Tips</p>
-
-</div>
+        <div className={styles.navItem}>
+          <Link to="/food-storage-tips" style={{color: 'inherit', textDecoration: 'inherit'}}>
+            <img src={require('./foodstorage/image_prev_ui.png')} alt="mealplan"
+                className={`${styles.foodStorageImg} ${styles.foodStorageImgPadding}`}
+            />
+            <p className={styles.navItemText}>Food Storage Tips</p>
+          </Link>
+        </div>
             <div className={styles.navItem}>
                 <Link to="/Leftovers" style={{color: 'inherit', textDecoration: 'inherit'}}>
                     <img src={leftovers} alt="Leftovers" className={styles.navImg}/>

@@ -43,6 +43,7 @@
   width: 50%;
   border: 2px solid #000;
   border-radius: 4px;
+  font-family: Inika;
 }
 
 .Submit-button {
@@ -94,11 +95,18 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: Inika;
   }
-  
+  .mealAddTxt{
+    font-weight: bold;
+    font-size: 50px;
+    font-family: Inika;
+    margin: 10px;
+  }
   .meal-name {
     font-weight: bold;
     font-size: 50px;
+    font-family: Inika;
   }
   
   .meal-date, .meal-time-span {
@@ -124,3 +132,14 @@ li {
     top: 20px;
     right: 20px;
   }
+
+  @font-face {
+    font-family: NotoSans;
+    src: url(../fonts/NotoSans.ttf);
+  }
+  
+  @font-face {
+  font-family: Inika;
+  src: url(../fonts/Inika-Regular.ttf);
+  }
+  

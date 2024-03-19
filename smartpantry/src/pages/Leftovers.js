@@ -91,7 +91,7 @@ const Leftovers = () => {
 
       {/* Meal submission section */}
       <div className="bodyContainer">
-        <h1 style={{ fontSize: '36px', marginLeft: '5px' }}>Add a Meal</h1>
+        <div className = "mealAddTxt" style={{ fontSize: '36px', marginLeft: '5px'}}>Add a Meal</div>
         <div className = "formContainer">
         <form id="formSubmit" onSubmit={handleSubmit}>
           <input

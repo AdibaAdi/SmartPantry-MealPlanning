@@ -16,8 +16,6 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
 // Connect to MongoDB
 const mongoDB_URI = process.env.MONGODB_URI;
 mongoose.connect(mongoDB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -34,12 +32,13 @@ app.use('/api/users', userRoutes);
 app.use('/api/recipes', recipeRoutes);
 app.use('/api/leftovers', leftoverRoutes);
 
+// Example route
+app.get("/getData", (req, res) => {
+  res.send("Hello");
+});
+
 // Start server
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-});
-
-app.get("/getData", (req, res) => {
-  res.send("Hello");
 });

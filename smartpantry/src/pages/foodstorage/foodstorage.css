@@ -1,27 +1,67 @@
 .banner-title {
-    text-align: center;
-    margin: 20px 0;
-  }
+  text-align: center;
+  margin: 20px 0;
+  font-family: Inika;
+}
+
+.bodyContainer {
+  margin: 20px 50px;
+}
+
+.tips-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  font-size: 30px; /* Increased font size */
+}
+
+.tips-list li {
+  margin-bottom: 20px; /* Increased space between paragraphs */
+}
+
+.tips-list img {
+  float: right; /* Align images to the right of the text */
+  margin-left: 20px; /* Add some space between text and images */
+  width: 150px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
   
-  .bodyContainer {
-    margin: 20px 50px;
-  }
-  
-  .tips-list {
-    list-style-type: disc;
-    margin-left: 20px;
-    font-size: 30px; /* Increased font size */
-  }
-  
-  .tips-list li {
-    margin-bottom: 20px; /* Increased space between paragraphs */
-  }
-  
-  .tips-list img {
-    float: right; /* Align images to the right of the text */
-    margin-left: 20px; /* Add some space between text and images */
-    width: 150px; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  
+p {
+  font-size: 30px;
+  font-family: Inika;
+}
+
+h2 {
+  font-size: 48px;
+  margin: 20px 0;
+  text-align: center;
+  font-family: Inika;
+}
+
+h3 {
+  font-size: 36px;
+  margin-top: 10px;
+  font-family: Inika;
+  border-bottom: 5px solid black;
+}
+
+h4 {
+  font-size: 32px;
+  font-family: Inika;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url(../fonts/NotoSans.ttf);
+}
+
+@font-face {
+font-family: Inika;
+src: url(../fonts/Inika-Regular.ttf);
+}

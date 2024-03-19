@@ -13,6 +13,7 @@ const Leftovers = () => {
   const navigate = useNavigate();
 
   // Corrected onChange handler
+  // Corrected onChange handler
   const handleLeftoverNameChange = (e) => setLeftoverName(e.target.value);
 
   const handleSubmit = async (e) => {
@@ -135,6 +136,7 @@ const Leftovers = () => {
       <button className="tipsToStoreFoodBtn" onClick={navigateToFoodStorageTips}>
         Tips to Store Food
       </button>
+      
       
     </div>
   );

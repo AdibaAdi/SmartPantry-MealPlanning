@@ -10,6 +10,7 @@ exports.addLeftover = async (req, res) => {
       const newLeftover = new Leftover({
         leftover_name,
         date_stored,
+        completion_status: false,
         user_name,
       });
   

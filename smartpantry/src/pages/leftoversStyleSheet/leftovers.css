@@ -9,7 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color:black;
-  padding: 100px 300px;
+  padding: 50px 300px;
   border: 2px solid white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, .8);
@@ -26,24 +26,35 @@
   align-items: center;
 }
 
-.text-box {
-  width: 30%;
-  margin-right: 10px;
-  font-size: 36px;
-  margin-left: 50px;
+.formContainer {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+.formSubmit {
+  display: flex;
+  justify-content: space-between; /* Space out form children */
+  align-items: center; /* Align children vertically */
+  width: 70%; /* Increase or decrease as needed */
+  max-width: 600px; /* Set a max-width if desired */
 }
 
+.text-box {
+  flex-grow: 1; /* Input takes up remaining space */
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #000; /* Just an example, style as needed */
+  border-radius: 4px;
+}
 
 .Submit-button {
-  padding: 0;
-  border: none;
+  padding: 10px;
   background: transparent;
+  border: none; /* Removes default border */
+  color: white;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 4px;
 }
-
 .deleteButton {
   border: none;
   background: transparent;
